@@ -60,13 +60,13 @@ void levelbutton()
 			case WM_LBUTTONDOWN:
 				loadimage(&img, "./button/newbuttonclicked.JPG");//点击后特效
 				if (mouseX >= 0 && mouseX <= 250 && mouseY >= imageUY && mouseY <= imageUY + imageDY)
-					putimage(0, 400, &img);
+					putimage(0, 550, &img);
 				else if (mouseX >= 250 && mouseX <= 500 && mouseY >= imageUY && mouseY <= imageUY + imageDY)
-					putimage(250, 400, &img);
+					putimage(250, 550, &img);
 				else if (mouseX >= 500 && mouseX <= 750 && mouseY >= imageUY && mouseY <= imageUY + imageDY)
-					putimage(500, 400, &img);
+					putimage(500, 550, &img);
 				else if (mouseX >= 750 && mouseX <= 1000 && mouseY >= imageUY && mouseY <= imageUY + imageDY)
-					putimage(750, 400, &img);
+					putimage(750, 550, &img);
 				break;
 			}
 
@@ -110,7 +110,7 @@ begin:
 	column = atoi(s);
 	InputBox(s, 10, "Number of mines? ");//弹出输入框，并输入雷数
 	mineNum = atoi(s);
-	if (row < 9 || column < 9 || row>24 || column>30 || mineNum > row * column * 9 / 10)
+	if (row < 9 || column < 9 || row>24 || column>30 || mineNum > row * column * 9 / 10 || mineNum < 10)
 	{
 		initgraph(400, 400, SHOWCONSOLE);//弹出提示框
 		MessageBox(GetHWnd(), "The input is invalid, please try again", "Notice!", MB_OK);//提示输入不合法
